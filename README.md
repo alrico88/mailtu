@@ -8,7 +8,7 @@ Using npm `npm i mailtu`
 
 Using yarn `yarn add mailtu`
 
-Using pnpm `pnpm add maitu`
+Using pnpm `pnpm add mailtu`
 
 ## Usage
 
