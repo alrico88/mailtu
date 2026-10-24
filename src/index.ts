@@ -1,10 +1,10 @@
 type Recipients = string | string[];
 
 export interface AdditionalFieldsOptions {
-  cc?: Recipients,
-  bcc?: Recipients,
-  subject?: string,
-  body?: string
+  cc?: Recipients;
+  bcc?: Recipients;
+  subject?: string;
+  body?: string;
 }
 
 const fields = ['cc', 'bcc', 'subject', 'body'] as const;
@@ -44,9 +44,10 @@ export function createMailTo(
       return;
     }
 
-    const encoded = typeof val === 'string' && (field === 'subject' || field === 'body')
-      ? encodeText(val)
-      : encodeAddresses(val);
+    const encoded =
+      typeof val === 'string' && (field === 'subject' || field === 'body')
+        ? encodeText(val)
+        : encodeAddresses(val);
 
     if (encoded) {
       queries.push(`${field}=${encoded}`);

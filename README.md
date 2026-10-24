@@ -29,7 +29,7 @@ Then
 ```javascript
 const mailToLink = createMailTo('to@address.com', {
   subject: 'This is a test email',
-  body: 'It was generated with the mailtu NPM package'
+  body: 'It was generated with the mailtu NPM package',
 });
 
 // mailToLink is mailto:to@address.com?subject=This%20is%20a%20test%20email&body=It%20was%20generated%20with%20the%20mailtu%20NPM%20package
