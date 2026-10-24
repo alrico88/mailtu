@@ -5,8 +5,14 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "exports": {
-    "require": "./dist/index.js",
-    "import": "./dist/index.mjs"
+    "require": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "import": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
   },
   "types": "./dist/index.d.ts",
   "files": [
@@ -46,11 +52,7 @@
     "coverage": "vitest run --coverage",
     "lint": "eslint --cache --fix --ignore-path .gitignore --ext .ts,.js src",
     "prepublish": "pnpm run build",
+    "prepare": "husky install",
     "coveralls": "vitest run --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm run lint"
-    }
   }
 }
